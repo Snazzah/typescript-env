@@ -1,0 +1,16 @@
+# Packages
+node_modules/
+yarn.lock
+package-lock.json
+
+# Log files
+logs/
+*.log
+
+# Miscellaneous
+.tmp/
+.vscode/settings.json
+docs/docs.json
+webpack/
+testing/
+.husky/_/
