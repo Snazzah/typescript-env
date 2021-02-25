@@ -20,6 +20,13 @@ if (!repo) {
 
   fs.writeFileSync(join(__dirname, '../package.json'), JSON.stringify(pkg, null, '  ') + '\n');
 
+  console.log('Writing .github/workflows/release.yml...');
+  const release = fs.readFileSync(join(__dirname, '../.github/workflows/release.yml'), { encoding: 'utf-8' });
+  fs.writeFileSync(
+    join(__dirname, '../.github/workflows/release.yml'),
+    release.replace('@snazzah', `@${user.toLowerCase()}`)
+  );
+
   console.log('Writing scripts/gpr.ts...');
   const gpr = fs.readFileSync(join(__dirname, '../scripts/gpr.ts'), { encoding: 'utf-8' });
   fs.writeFileSync(join(__dirname, '../scripts/gpr.ts'), gpr.replace('@snazzah', `@${user.toLowerCase()}`));
