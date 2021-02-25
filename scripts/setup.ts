@@ -51,6 +51,13 @@ if (!repo) {
   console.log('Removing this setup file...');
   fs.unlinkSync(join(__dirname, '../scripts/setup.ts'));
 
+  console.log('Writing LICENSE...');
+  const license = fs.readFileSync(join(__dirname, '../LICENSE'), { encoding: 'utf-8' });
+  fs.writeFileSync(
+    join(__dirname, '../LICENSE'),
+    license.replace('2021 Snazzah', `${new Date().getFullYear()} ${user}`)
+  );
+
   console.log(
     '\n\nDone! Now what?\n - `git init && npx husky install`\n- Make sure to update the README and add deps\n- Set the `NPM_TOKEN` of the repository\n- Make code/tests\n'
   );
