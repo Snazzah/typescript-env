@@ -52,6 +52,6 @@ if (!repo) {
   fs.unlinkSync(join(__dirname, '../scripts/setup.ts'));
 
   console.log(
-    '\n\nDone! Now what?\n - `git init`\n- Make sure to update the README and add deps\n- Set the `NPM_TOKEN` of the repository\n- Make code/tests\n'
+    '\n\nDone! Now what?\n - `git init && npx husky install`\n- Make sure to update the README and add deps\n- Set the `NPM_TOKEN` of the repository\n- Make code/tests\n'
   );
 }

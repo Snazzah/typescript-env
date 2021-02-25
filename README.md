@@ -7,4 +7,6 @@ cd my-typescript-project
 npm i -g yarn
 yarn
 yarn setup user/repo Snazzah
+npx husky install
+git init
 ```
