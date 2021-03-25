@@ -14,3 +14,4 @@ docs/docs.json
 webpack/
 testing/
 .husky/_/
+lib/
