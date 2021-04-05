@@ -54,7 +54,6 @@ if (!repo) {
   console.log('Removing .keep files...');
   fs.unlinkSync(join(__dirname, '../src/.keep'));
   fs.unlinkSync(join(__dirname, '../test/.keep'));
-  fs.unlinkSync(join(__dirname, '../lib/.keep'));
 
   console.log('Removing this setup file...');
   fs.unlinkSync(join(__dirname, '../scripts/setup.ts'));
