@@ -49,11 +49,12 @@ if (!repo) {
 
   console.log('Writing .gitignore...');
   const gitignore = fs.readFileSync(join(__dirname, '../.gitignore'), { encoding: 'utf-8' });
-  fs.writeFileSync(join(__dirname, '../.gitignore'), gitignore.replace('.vscode/settings.json', '.vscode/'));
+  fs.writeFileSync(join(__dirname, '../.gitignore'), gitignore.replace('.vscode/settings.json', '.vscode/') + '\nlib/');
 
   console.log('Removing .keep files...');
   fs.unlinkSync(join(__dirname, '../src/.keep'));
   fs.unlinkSync(join(__dirname, '../test/.keep'));
+  fs.unlinkSync(join(__dirname, '../lib/.keep'));
 
   console.log('Removing this setup file...');
   fs.unlinkSync(join(__dirname, '../scripts/setup.ts'));
